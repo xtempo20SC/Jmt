@@ -1,36 +1,36 @@
 package module1.practice.StringManipulation;
 
-public class String_All_possible_Substring {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
-	private static void permutation(String perm, String word) 
-	{
-		if (word.isEmpty()) 
-		{
-		   System.out.println(perm + word);
-		} 
-		else 
-		{
-		   for (int noMore = 0; noMore <= 1; noMore++) 
-		   {
-		      if (noMore == 0) 
-		      {
-		         for (int i = 0; i < word.length(); i++) 
-		         {
-		               permutation(perm + word.charAt(i), word.substring(i + 1, word.length()));
-		         }
-		      }
-		      else 
-		      {
-		         permutation(perm, "");
-		      }
-		   }
-		}
-    }
-
-		
+public class String_All_possible_Substring 
+{
+	
 	public static void main(String[] args) 
 	{
-		permutation("","ramdom");
+		String str = "random";  
+        int len = str.length();  
+     
+        List<String> list = new ArrayList<>();
+   
+        for(int i = 0; i < len; i++) 
+        {  
+            for(int j = i; j < len; j++) 
+            {  
+                list.add(str.substring(i, j+1));
+            }  
+        }  
+        
+        
+        //print all substrings
+        System.out.println(list);
+          
+       
+        //print word of length 3
+        System.out.println(
+        		list.stream().filter(e->e.length()==3).collect(Collectors.toList())
+        		);
 	}
 
 }

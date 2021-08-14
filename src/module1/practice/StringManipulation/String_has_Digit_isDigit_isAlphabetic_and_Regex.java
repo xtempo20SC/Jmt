@@ -6,7 +6,7 @@ public class String_has_Digit_isDigit_isAlphabetic_and_Regex{
 
 	public static void main(String[] args) {
 		
-		String str = "abhv90ui";
+		String str = "abhv90@#ui";
 		
 		// Character.isDigit() method
 		
@@ -14,12 +14,12 @@ public class String_has_Digit_isDigit_isAlphabetic_and_Regex{
 		{
 			if(Character.isDigit(c))  
 			{
-				System.out.println("Digit : "+true);
+				System.out.println("Digit : "+true+":"+c);
 			}
 			
-			if(Character.isAlphabetic(c))
+			if(Character.isAlphabetic(c)) //Character.isLetter(c)
 			{
-				System.out.println("Alphabate : "+true);
+				System.out.println("Alphabate : "+true+":"+c);
 			}
 		}
 		
