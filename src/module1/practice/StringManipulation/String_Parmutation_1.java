@@ -35,7 +35,7 @@ public class String_Parmutation_1 {
 	}
 	
 	public static void main(String[] args) {
-		String str = "random";
+		String str = "12345";
 		System.out.println(generatePerm(str));
 	}
 }

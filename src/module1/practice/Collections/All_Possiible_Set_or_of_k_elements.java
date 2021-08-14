@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class All_Possiible_Set_or_of_2_elements
+public class All_Possiible_Set_or_of_k_elements
 {
+	//don't work on 5 element permutation; for that go to pervious/ up program
 
 	public static Set<Set<Integer>> powerSet(List<Integer> intList){
 
@@ -34,7 +35,8 @@ public class All_Possiible_Set_or_of_2_elements
 	{
 		List<Integer> list = Arrays.asList(1,2,3,4,5);
 		
-		//set of all elements
+		//set of all elements [4] [2, 3] [1, 4] [5] [1, 2, 3] ... all
+			
 		Set<Set<Integer>> set = new HashSet<Set<Integer>>();
 		set =powerSet(list);
 		for(Set<Integer> rset : set)
@@ -43,12 +45,14 @@ public class All_Possiible_Set_or_of_2_elements
 		}
 		
 		
-		//set of 2 elements
+		//set of 2 elements [[1, 2], [1, 3], [2, 3], [1, 4], [2, 4], [1, 5], [3, 4], [2, 5], [3, 5], [4, 5]]
+		
 		System.out.println(
 			powerSet(list).stream().filter(e->e.size()==2).collect(Collectors.toList())
 			);
 		
-		//set of 3 elements
+		//set of 3 elements [[1, 2, 3], [1, 2, 4], [1, 3, 4], [1, 2, 5], [2, 3, 4], [1, 3, 5], [2, 3, 5], [1, 4, 5], [2, 4, 5], [3, 4, 5]]
+
 		System.out.println(
 				powerSet(list).stream().filter(e->e.size()==3).collect(Collectors.toList())
 				);
