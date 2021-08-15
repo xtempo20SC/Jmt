@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class All_Possiible_Set_or_of_k_elements
+//Ordered
+public class All_SubSet_or_of_k_elements
 {
 	//don't work on 5 element permutation; for that go to pervious/ up program
 

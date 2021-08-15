@@ -91,6 +91,16 @@ public static void main(String[] args) {
 		names.forEach(System.out::println);
 		
 		
+		//Distinct data
+		List<Integer> discAge = list.stream()
+				.filter(e->e.getName().length()>3)
+				.map(e->e.getAge())
+				.distinct()        //distinct KeyWord
+				.collect(Collectors.toList());
+		
+		System.out.println("Disc Age : "+discAge);
+		
+		
 		// Any name contains "a"
 		List<String> aNames =list.stream()
 				.filter(e->e.getName().contains("a") || e.getName().contains("A"))

@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class All_Permutation_of_array_elements {
+public class All_Permutations_of_Array2 {
 	
 	
 	
