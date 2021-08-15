@@ -18,7 +18,8 @@ public class String_Duplicate_Characters {
 		
 		//duplicate characters substring WITH INSERTION ORDER
 		
-				String str2 = "Combination";
+				String str2 = "Combination";  //[o, i, n]
+				
 			
 				List<String> list = new ArrayList<String>();	
 				
@@ -41,7 +42,8 @@ public class String_Duplicate_Characters {
 			   
 	    //duplicate chars using indexOf & lastindexOf | HASH ORDER
 			   
-		String str1 = "ammaanupun";
+		String str1 = "ammaanupun";  //[a, u, m, n]
+		
 		Set<Character> rlist1 = new HashSet<>();
 		for(char c : str1.toCharArray())
 		{
@@ -58,7 +60,7 @@ public class String_Duplicate_Characters {
 	   
 	 //find String duplicate characters using stream API | HASH ORDER
 		
-	 		String input = "ammaanupun";
+	 		String input = "ammaanupun";  //[a, u, m, n]
 	 		
 	 		    //Step 1
 	 		    IntStream intStream = input.chars();

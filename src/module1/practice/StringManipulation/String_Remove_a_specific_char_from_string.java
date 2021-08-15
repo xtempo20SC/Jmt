@@ -4,7 +4,8 @@ public class String_Remove_a_specific_char_from_string {
 
 	public static void main(String[] args) {
 		
-		String str ="nfeiucvyalka";
+		String str ="nfeiucvyalka";   //feiucvyalka
+
 		char sc = 'n';
 		StringBuffer sb = new StringBuffer();
 		for(char c : str.toCharArray())

@@ -13,9 +13,9 @@ public class Stram_API_on_Strings {
 	public static void main(String[] args) {
 		
 		
-		//find duplicate characters using stream API
+//find duplicate characters using stream API  | Hash Order --> for insertion order go to string package
 		
-		String input = "bbbcccccddddddaaaaup##^$!%^$!^%@!$^@!kds";
+		String input = "Combination"; //[i, n, o]
 		
 		    //Step 1
 		    IntStream intStream = input.chars();
