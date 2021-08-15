@@ -14,6 +14,7 @@ class Employee
 	private int id;
 	private String name;
 	private int age;
+	
 	public Employee(int id, String name, int age) {
 		super();
 		this.id = id;
@@ -90,6 +91,15 @@ public static void main(String[] args) {
 		names.forEach(System.out::println);
 		
 		
+		// Any name contains "a"
+		List<String> aNames =list.stream()
+				.filter(e->e.getName().contains("a") || e.getName().contains("A"))
+				.map(e->e.getName())
+				.collect(Collectors.toList());
+		
+		System.out.println(aNames);
+		
+		
 		//Name starts with A
 		 
 		  //Type 1
@@ -127,12 +137,23 @@ public static void main(String[] args) {
 		//( map + sorted ) unable to do
 		
 		//sort according last char + reversed order
-		List<Employee> lastCharofName = list.stream()
-		         .sorted(Comparator.comparing(e->e.getName().substring(e.getName().length()-1),Comparator.reverseOrder()))
-		         .collect(Collectors.toList());
 		
-		lastCharofName.forEach(System.out::println);
-				
+		   //Type 1
+		List<Employee> lastCharofName1 = list.stream()
+		         .sorted(Comparator.comparing(
+		        		 e->e.getName().substring(e.getName().length()-1),Comparator.reverseOrder()
+		        		 )).collect(Collectors.toList());
+		
+		lastCharofName1.forEach(System.out::println);
+		
+		   //Type 2
+		List<Employee> lastCharofName2 = list.stream()
+		         .sorted(Comparator.comparing(
+		        		 e->e.getName().substring(e.getName().length()-1,e.getName().length()),Comparator.reverseOrder()
+		        		 )).collect(Collectors.toList());
+		
+		lastCharofName2.forEach(System.out::println);
+			
 		
 		//sum of ages >= 60 & 2nd word of name is 'a' --> using .sum()
 		Integer sumOfAge = list.stream()
@@ -171,15 +192,32 @@ public static void main(String[] args) {
 		
 		//findFirst()
 		
-		  //Type 1
+		  //Type 1  //find Age
 		Integer fage = list.stream()
 				.filter(e->e.getAge()%2==0)
 				.map(e->e.getAge())
 				.findFirst()     //it returns Optional; so we have to use .get() 
 				.get();          //output : 24
 				
-		
 		System.out.println(fage);
+		
+		         //find Name
+		String fn = list.stream()
+				.filter(e->e.getAge()%2==0)
+				.map(e->e.getName())
+				.findFirst()     //it returns Optional; so we have to use .get() 
+				.get(); 
+		
+		System.out.println(fn);
+		
+		        //find Object
+		Employee fe = list.stream()
+				.filter(e->e.getAge()%2==0)
+				.findFirst()     //it returns Optional; so we have to use .get() 
+				.get(); 
+		
+		System.out.println(fe);
+		
 		
 		//orElse() -- Type 2
 		Integer foage = list.stream()
@@ -192,6 +230,33 @@ public static void main(String[] args) {
 		System.out.println(foage);
 		
 		
+	//	<--------------------------  EXTRA BACK-UP  ------------------------------>
+		
+		// for extra back-up type'Java 8 Stream geeks for geeks' in google and go to 2nd hit 
+		//            https://www.geeksforgeeks.org/java-8-stream/
+		
+//		anyMatch()
+//		noneMatch()
+//		mapToLong()
+//		findAny()
+//		forEachOrdered()
+//		forEach()
+//		allMatch()
+//		filter()
+//		findFirst()
+//		flatMapToInt()
+//		mapToInt()
+//		map()
+//		peek()
+//		counting()
+//		Iterator()
+//		Generate()
+//		Skip()
+//		SummaryStatistics()
+//		Builder()
+//		Empty()
+//		Stream toArray()
+//		Sum of list with stream filter
 		
  } 
 }

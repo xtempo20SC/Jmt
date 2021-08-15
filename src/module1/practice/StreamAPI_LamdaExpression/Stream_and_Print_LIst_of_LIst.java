@@ -38,6 +38,8 @@ class PhoneBook
 	{
 		this.phNos=phNos;
 	}
+	
+	//implement toString() also.
 }
 public class Stream_and_Print_LIst_of_LIst {
  
@@ -55,12 +57,14 @@ public class Stream_and_Print_LIst_of_LIst {
 	    		.map(e->e.getPhNos())         //[ [8976543764, 6789345266], [9976543764, 489345266], [276543764, 5789345266] ]
 	    		.collect(Collectors.toList()));  
 	    
+	    
 	    //flatmap can handle stream as argument
 	    
 	    System.out.println(pblist.stream()
 	    		.flatMap(e->e.getPhNos().stream())  //[8976543764, 6789345266, 9976543764, 489345266, 276543764, 5789345266]
 	    		.collect(Collectors.toList()));
 		
+	    
 	}
 	
 }
