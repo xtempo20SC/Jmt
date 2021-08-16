@@ -17,14 +17,21 @@ public static void main(String[] args) {
 		list.add(new Employee(30,"Amal",90));
 		
 		//Max using Comparator & Stream API
+		
 		Employee eMax = list.stream().max(Comparator.comparing(Employee::getAge)
 				 .thenComparing(Employee::getName,Comparator.reverseOrder())).get();
 		
+		
 		System.out.println(eMax);
+		//Employee [id=30, name=Amal, age=90]
+		
+		
 		
 		//Min using Comparator & Stream API
+		
 		Employee eMin = list.stream().min(Comparator.comparing(Employee::getAge)).get();
 		
 		System.out.println(eMin);	
+		//Employee [id=66, name=Shyam, age=24]
    }
 }

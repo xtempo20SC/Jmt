@@ -12,6 +12,7 @@ public class Enum_SwitchCase
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter  : ");
 		String str =sc.next();
 		PhoneBook code = PhoneBook.valueOf(str.toUpperCase());
 		
