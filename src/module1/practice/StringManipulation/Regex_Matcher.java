@@ -17,6 +17,8 @@ public class Regex_Matcher {
 		String regexName = 
   "^[a-zA-Z]+[\\.]{1}[\s]{1}[A-Z]{1}[a-z]*[^\\W\\*]*[A-Z]*[\s]{1}[A-Z]{0,1}[a-z]*[^\\W\\*]*[A-Z]*$";
 		
+  //---> String regex = "^[A-Z]{1}[a-z]*[\\s]*[A-Z]{1}[a-z]*[\\'\\-]*[A-Z]*[a-z]*$"; as DoSelect
+		
 		// if dosen't match give [\\s]
 		
 		System.out.println(Pattern.matches(regexName, name));  //alawys give regex 1st at argument list
